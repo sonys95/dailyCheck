@@ -53,9 +53,14 @@ function updatePostList() {
       const likeButton = document.createElement("button");
       likeButton.classList.add("heartButton");
       likeButton.innerHTML = post.likes > 0 ? "❤️" : "🤍";
-      likeButton.onclick = () => {
-        post.likes += 1;
-        likeButton.innerHTML = "❤️";
+      likeButton.onclick = function () {
+        if (post.likes > 0) {
+          post.likes = 0;
+          likeButton.innerHTML = "🤍";
+        } else {
+          post.likes += 1;
+          likeButton.innerHTML = "❤️";
+        }
         updatePostList();
         saveToLocalStorage();
       };

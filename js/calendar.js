@@ -55,7 +55,7 @@ function showCalendar(date) {
   const firstDayOfMonth = new Date(date.getFullYear(), date.getMonth(), 1);
   const lastDayOfMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0);
 
-  // 첫 번째 날과 마지막 날의 요일(0: 일요일, 1: 월요일, ..., 6: 토요일)을 얻음
+  // 첫 번째 날과 마지막 날의 요일(0: 일요일, 1: 월요일)
   const startDayOfWeek = firstDayOfMonth.getDay();
   const endDayOfWeek = lastDayOfMonth.getDay();
 
@@ -177,9 +177,7 @@ function addDdayToLocalStorage(schedule, date) {
 function addDdayToList(schedule, date) {
   const ddayList = document.getElementById("ddayItemsList");
   const ddayElement = document.createElement("li");
-
   const { daysDiff } = getDaysDiffFromToday(date);
-
   let dDayText;
   if (daysDiff === 0) {
     dDayText = "D-Day";

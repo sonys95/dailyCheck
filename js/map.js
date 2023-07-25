@@ -1,19 +1,18 @@
 // Google Maps API 키
-const googleMapsApiKey = "AIzaSyCJy8gkdc-4xxx7vTH26W_ntzA-h-1ZzqE"; // 여기에 실제 Google Maps API 키를 넣으세요.
-
+const googleMapsApiKey = "AIzaSyCJy8gkdc-4xxx7vTH26W_ntzA-h-1ZzqE";
 // OpenWeatherMap API 키
-const openWeatherMapApiKey = "2a6604feb5f6a784be51361199f6c5cc"; // 여기에 실제 OpenWeatherMap API 키를 넣으세요.
+const openWeatherMapApiKey = "2a6604feb5f6a784be51361199f6c5cc";
 
 // 지도를 표시하는 함수
 function initMap(latitude, longitude) {
   const mapOptions = {
     center: { lat: latitude, lng: longitude },
-    zoom: 15, // 지도를 더 확대해서 보여줄 수 있습니다.
+    zoom: 15, // 지도 확대
   };
   const mapElement = document.getElementById("map");
   const map = new google.maps.Map(mapElement, mapOptions);
 
-  // 현재 위치에 핀을 찍어줍니다.
+  // 현재 위치에 핀
   const marker = new google.maps.Marker({
     position: { lat: latitude, lng: longitude },
     map: map,
